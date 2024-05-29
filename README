@@ -1,0 +1,5 @@
+Getting started - I have chosen to use Java 11, the project was mostly
+
+sdk use java 11.0.23-amzn
+mvn clean package
+java -jar target/five-card-draw-1.0-SNAPSHOT.jar
