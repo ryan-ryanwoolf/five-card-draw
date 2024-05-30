@@ -2,7 +2,6 @@ package com.ryanwoolf.fivecarddraw;
 
 import com.ryanwoolf.fivecarddraw.cardgame.Card;
 import com.ryanwoolf.fivecarddraw.cardgame.GenericDeck;
-import com.ryanwoolf.fivecarddraw.mocks.HandMocks;
 import com.ryanwoolf.fivecarddraw.utils.HandUtils;
 
 import java.util.ArrayList;
