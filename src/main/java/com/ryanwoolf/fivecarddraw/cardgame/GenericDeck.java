@@ -14,7 +14,6 @@ public class GenericDeck implements Deck {
         for(int i = 0;i < suits.size();i++){
 
             for(int j = 0;j < ranks.size();j++){
-                System.out.println(ranks.get(j) + suits.get(i));
                 deckCards.add(new Card(ranks.get(j),suits.get(i)));
             }
         }
