@@ -1,5 +1,7 @@
-Getting started - I have chosen to use Java 11, the project was mostly
+Getting started
 
-sdk use java 11.0.23-amzn
-mvn clean package
-java -jar target/five-card-draw-1.0-SNAPSHOT.jar
+ - Make sure that you are using java 11 - I tested on this using sdkman - sdk use java 11.0.23-amzn
+ - to run the application, execute ./run.sh
+ - to run all unit tests, execute ./test.sh
+ - to rebuild the application, execute ./build.sh
+

@@ -5,6 +5,10 @@ import com.ryanwoolf.fivecarddraw.cardgame.Card;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+/*
+These are mock hands that will be used in our unit tests to ensure that our evaluation module is working as expected.
+*/
+
 
 public class HandMocks {
 
@@ -326,6 +330,45 @@ public class HandMocks {
     }
 
     public List<Card> highCard(){
+        List<Card> dealtCards = new ArrayList<Card>();
+        Optional<Card> twoHearts = this.deckCards.stream()
+                .filter(card -> card.getSuit().equals("♥") && card.getRank().equals("2"))
+                .findFirst();
+
+        Optional<Card> fourDaimonds = this.deckCards.stream()
+                .filter(card -> card.getSuit().equals("♦") && card.getRank().equals("4"))
+                .findFirst();
+
+        Optional<Card> sevenSpades = this.deckCards.stream()
+                .filter(card -> card.getSuit().equals("♠") && card.getRank().equals("7"))
+                .findFirst();
+
+        Optional<Card> eightClubs = this.deckCards.stream()
+                .filter(card -> card.getSuit().equals("♣") && card.getRank().equals("8"))
+                .findFirst();
+
+        Optional<Card> tenHearts = this.deckCards.stream()
+                .filter(card -> card.getSuit().equals("♥") && card.getRank().equals("10"))
+                .findFirst();
+        if(twoHearts.isPresent()){
+            dealtCards.add(twoHearts.get());
+        }
+        if(fourDaimonds.isPresent()){
+            dealtCards.add(fourDaimonds.get());
+        }
+        if(sevenSpades.isPresent()){
+            dealtCards.add(sevenSpades.get());
+        }
+        if(eightClubs.isPresent()){
+            dealtCards.add(eightClubs.get());
+        }
+        if(tenHearts.isPresent()){
+            dealtCards.add(tenHearts.get());
+        }
+        return dealtCards;
+    }
+
+    public List<Card> predefinedHand(){
         List<Card> dealtCards = new ArrayList<Card>();
         Optional<Card> twoHearts = this.deckCards.stream()
                 .filter(card -> card.getSuit().equals("♥") && card.getRank().equals("2"))

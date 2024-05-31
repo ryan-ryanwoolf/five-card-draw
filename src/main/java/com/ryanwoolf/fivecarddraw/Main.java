@@ -6,6 +6,10 @@ import com.ryanwoolf.fivecarddraw.utils.HandUtils;
 
 import java.util.ArrayList;
 
+/*
+This main class is defined in the shade plugin as the main entry point when we run the application in the console.
+*/
+
 public class Main {
     public static void main(String[] args) {
         GenericDeck deck = new GenericDeck(Card.SUITS,Card.RANKS);
