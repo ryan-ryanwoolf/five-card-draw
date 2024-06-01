@@ -1,24 +1,23 @@
-package com.ryanwoolf.utils;
+package com.ryanwoolf.cardgame;
 
 import com.ryanwoolf.fivecarddraw.cardgame.Card;
-import com.ryanwoolf.fivecarddraw.cardgame.GenericDeck;
+import com.ryanwoolf.fivecarddraw.cardgame.CollectionShuffleDeck;
+import com.ryanwoolf.fivecarddraw.cardgame.Poker;
 import com.ryanwoolf.fivecarddraw.mocks.HandMocks;
-import com.ryanwoolf.fivecarddraw.utils.EvaluationUtils;
-import com.ryanwoolf.fivecarddraw.utils.HandUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-public class EvaluationUtilsTest {
+public class PokerTest {
 
 
     ArrayList<Card> cardsDealt = new ArrayList<Card>();
-    GenericDeck deck;
+    CollectionShuffleDeck deck;
     HandMocks handMocks;
     @BeforeEach
     public void setUp() {
-        this.deck = new GenericDeck(Card.SUITS,Card.RANKS);
+        this.deck = new CollectionShuffleDeck();
         this.deck.shuffle();
         this.handMocks = new HandMocks(deck.deckCards);
     }
@@ -27,8 +26,8 @@ public class EvaluationUtilsTest {
     public void testIsStraightFlush() {
 
         this.cardsDealt = (ArrayList<Card>) this.handMocks.straightFlush();
-        String evaluationString = HandUtils.evaluateHand(this.cardsDealt);
-        assert(evaluationString.equals("Straight Flush"));
+        Poker poker = new Poker(cardsDealt);
+        assert(poker.getEvaluationString().equals("Straight Flush"));
 
     }
 
@@ -36,8 +35,8 @@ public class EvaluationUtilsTest {
     public void testIsFourOfAKind() {
 
         this.cardsDealt = (ArrayList<Card>) this.handMocks.fourOfAKind();
-        String evaluationString = HandUtils.evaluateHand(this.cardsDealt);
-        assert(evaluationString.equals("Four of a Kind"));
+        Poker poker = new Poker(cardsDealt);
+        assert(poker.getEvaluationString().equals("Four of a Kind"));
 
     }
 
@@ -45,8 +44,8 @@ public class EvaluationUtilsTest {
     public void testIsFullHouse() {
 
         this.cardsDealt = (ArrayList<Card>) this.handMocks.fullHouse();
-        String evaluationString = HandUtils.evaluateHand(this.cardsDealt);
-        assert(evaluationString.equals("Full House"));
+        Poker poker = new Poker(cardsDealt);
+        assert(poker.getEvaluationString().equals("Full House"));
 
     }
 
@@ -54,8 +53,8 @@ public class EvaluationUtilsTest {
     public void testIsFlush() {
 
         this.cardsDealt = (ArrayList<Card>) this.handMocks.flush();
-        String evaluationString = HandUtils.evaluateHand(this.cardsDealt);
-        assert(evaluationString.equals("Flush"));
+        Poker poker = new Poker(cardsDealt);
+        assert(poker.getEvaluationString().equals("Flush"));
 
     }
 
@@ -63,8 +62,8 @@ public class EvaluationUtilsTest {
     public void testIsStraight() {
 
         this.cardsDealt = (ArrayList<Card>) this.handMocks.straight();
-        String evaluationString = HandUtils.evaluateHand(this.cardsDealt);
-        assert(evaluationString.equals("Straight"));
+        Poker poker = new Poker(cardsDealt);
+        assert(poker.getEvaluationString().equals("Straight"));
 
     }
 
@@ -72,8 +71,8 @@ public class EvaluationUtilsTest {
     public void testIsThreeOfAKind() {
 
         this.cardsDealt = (ArrayList<Card>) this.handMocks.threeOfAKind();
-        String evaluationString = HandUtils.evaluateHand(this.cardsDealt);
-        assert(evaluationString.equals("Three of a Kind"));
+        Poker poker = new Poker(this.cardsDealt);
+        assert(poker.getEvaluationString().equals("Three of a Kind"));
 
     }
 
@@ -81,8 +80,8 @@ public class EvaluationUtilsTest {
     public void testIsTwoPair() {
 
         this.cardsDealt = (ArrayList<Card>) this.handMocks.twoPair();
-        String evaluationString = HandUtils.evaluateHand(this.cardsDealt);
-        assert(evaluationString.equals("Two Pair"));
+        Poker poker = new Poker(this.cardsDealt);
+        assert(poker.getEvaluationString().equals("Two Pair"));
 
     }
 
@@ -90,8 +89,8 @@ public class EvaluationUtilsTest {
     public void testIsOnePair() {
 
         this.cardsDealt = (ArrayList<Card>) this.handMocks.onePair();
-        String evaluationString = HandUtils.evaluateHand(this.cardsDealt);
-        assert(evaluationString.equals("One Pair"));
+        Poker poker = new Poker(this.cardsDealt);
+        assert(poker.getEvaluationString().equals("One Pair"));
 
     }
 
@@ -99,8 +98,8 @@ public class EvaluationUtilsTest {
     public void testIsHighCards() {
 
         this.cardsDealt = (ArrayList<Card>) this.handMocks.highCard();
-        String evaluationString = HandUtils.evaluateHand(this.cardsDealt);
-        assert(evaluationString.equals("High Cards"));
+        Poker poker = new Poker(cardsDealt);
+        assert(poker.getEvaluationString().equals("High Cards"));
 
     }
 

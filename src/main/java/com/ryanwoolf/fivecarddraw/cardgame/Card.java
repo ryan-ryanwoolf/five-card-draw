@@ -1,32 +1,31 @@
 package com.ryanwoolf.fivecarddraw.cardgame;
 
+import com.ryanwoolf.fivecarddraw.enums.Ranks;
+import com.ryanwoolf.fivecarddraw.enums.Suits;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class Card {
+    private final Suits suit;
+    private final Ranks rank;
 
-    public static final List<String> SUITS = Arrays.asList("♣", "♦", "♥", "♠");
-    public static final List<String> RANKS = Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A");
-
-    public String getRank() {
-        return rank;
-    }
-
-    public String getSuit() {
-        return suit;
-    }
-
-    private String rank;
-    private String suit;
-
-    public Card(String rank, String suit) {
+    public Card(Ranks rank, Suits suit) {
         this.rank = rank;
         this.suit = suit;
     }
 
+    public Ranks getRank() {
+        return rank;
+    }
+
+    public Suits getSuit() {
+        return suit;
+    }
+
     @Override
     public String toString() {
-        return rank + suit;
+        return rank.getSymbol() + suit.getSymbol();
     }
 
 }
