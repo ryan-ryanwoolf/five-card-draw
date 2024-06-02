@@ -1,7 +1,7 @@
-package com.ryanwoolf.cardgame;
+package com.ryanwoolf.carddeck;
 
-import com.ryanwoolf.fivecarddraw.cardgame.Card;
-import com.ryanwoolf.fivecarddraw.cardgame.CollectionShuffleDeck;
+import com.ryanwoolf.fivecarddraw.carddeck.Card;
+import com.ryanwoolf.fivecarddraw.carddeck.CollectionShuffleDeck;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -13,7 +13,7 @@ public class CollectionShuffleDeckTest {
     public void testGenericDeckHas52UniqueCards() {
 
         CollectionShuffleDeck deck = new CollectionShuffleDeck();
-        Set<Card> uniqueCards = new HashSet<>(deck.deckCards);
+        Set<Card> uniqueCards = new HashSet<>(deck.getDeckCards());
         assert(uniqueCards.size()==52);
     }
 
@@ -22,7 +22,7 @@ public class CollectionShuffleDeckTest {
 
         CollectionShuffleDeck deck = new CollectionShuffleDeck();
         deck.shuffle();
-        Set<Card> uniqueCards = new HashSet<>(deck.deckCards);
+        Set<Card> uniqueCards = new HashSet<>(deck.getDeckCards());
         assert(uniqueCards.size()==52);
     }
 }

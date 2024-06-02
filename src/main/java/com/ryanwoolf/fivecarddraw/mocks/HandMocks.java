@@ -1,6 +1,6 @@
 package com.ryanwoolf.fivecarddraw.mocks;
 
-import com.ryanwoolf.fivecarddraw.cardgame.Card;
+import com.ryanwoolf.fivecarddraw.carddeck.Card;
 import com.ryanwoolf.fivecarddraw.enums.Ranks;
 import com.ryanwoolf.fivecarddraw.enums.Suits;
 

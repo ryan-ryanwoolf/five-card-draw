@@ -1,7 +1,7 @@
 package com.ryanwoolf.fivecarddraw;
 
-import com.ryanwoolf.fivecarddraw.cardgame.Card;
-import com.ryanwoolf.fivecarddraw.cardgame.CollectionShuffleDeck;
+import com.ryanwoolf.fivecarddraw.carddeck.Card;
+import com.ryanwoolf.fivecarddraw.carddeck.CollectionShuffleDeck;
 import com.ryanwoolf.fivecarddraw.cardgame.Poker;
 import com.ryanwoolf.fivecarddraw.utils.HandUtils;
 
@@ -15,11 +15,11 @@ public class Main {
     public static void main(String[] args) {
         CollectionShuffleDeck deck = new CollectionShuffleDeck();
         deck.shuffle();
-        ArrayList<Card> cardsDealt = HandUtils.dealCards(deck.deckCards,5);
-        String cardsString = HandUtils.handToString(cardsDealt);
+        ArrayList<Card> cardsDealt = HandUtils.dealCards(deck.getDeckCards(),5);
         Poker poker = new Poker(cardsDealt);
-        String cardsEvaluation = poker.getEvaluationString();
-        System.out.println("Your hand:"+cardsString);
-        System.out.println("You have:"+cardsEvaluation);
+        poker.viewHand();
+        poker.viewEvaluation();
+
+
     }
 }

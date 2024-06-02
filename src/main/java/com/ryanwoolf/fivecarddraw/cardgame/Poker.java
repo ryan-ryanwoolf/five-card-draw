@@ -1,5 +1,6 @@
 package com.ryanwoolf.fivecarddraw.cardgame;
 
+import com.ryanwoolf.fivecarddraw.carddeck.Card;
 import com.ryanwoolf.fivecarddraw.enums.Ranks;
 import com.ryanwoolf.fivecarddraw.enums.Suits;
 
@@ -84,37 +85,19 @@ public class Poker {
 
     public boolean evaluateFourOfAKind(){
 
-        if(this.rankCount.containsValue(4L)){
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return this.rankCount.containsValue(4L);
 
     }
 
     public boolean evaluateFullHouse(){
 
-        if(this.rankCount.containsValue(3L)&&this.rankCount.containsValue(2L)){
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return this.rankCount.containsValue(3L) && this.rankCount.containsValue(2L);
 
     }
 
     public boolean evaluateFlush(){
 
-        if(this.suitCount.containsValue(5L)){
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return this.suitCount.containsValue(5L);
 
     }
 
@@ -131,13 +114,7 @@ public class Poker {
 
     public boolean evaluateThreeOfAKind(){
 
-        if(this.rankCount.containsValue(3L)){
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return this.rankCount.containsValue(3L);
 
     }
 
@@ -150,13 +127,7 @@ public class Poker {
             }
         });
 
-        if(pairs[0]==2){
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return pairs[0] == 2;
 
     }
 
@@ -169,17 +140,29 @@ public class Poker {
             }
         });
 
-        if(pairs[0]==1){
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return pairs[0] == 1;
 
+    }
+
+    public void viewEvaluation(){
+        System.out.println("You have:"+this.handEvaluationString);
     }
 
     public String getEvaluationString(){
         return this.handEvaluationString;
     }
+
+    public void viewHand(){
+        StringBuilder cardsStringBuilder = new StringBuilder();
+        this.handCards.forEach(card -> {
+            if (cardsStringBuilder.length() == 0) {
+                cardsStringBuilder.append(card.toString());
+            } else {
+                cardsStringBuilder.append(" ").append(card.toString());
+            }
+        });
+        System.out.println("Your hand:"+ cardsStringBuilder);
+    }
+
+
 }

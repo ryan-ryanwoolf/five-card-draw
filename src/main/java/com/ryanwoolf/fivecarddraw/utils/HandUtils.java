@@ -1,11 +1,8 @@
 package com.ryanwoolf.fivecarddraw.utils;
 
-import com.ryanwoolf.fivecarddraw.cardgame.Card;
+import com.ryanwoolf.fivecarddraw.carddeck.Card;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static com.ryanwoolf.fivecarddraw.cardgame.Poker.*;
 
 public class HandUtils {
 
@@ -24,17 +21,4 @@ public class HandUtils {
         return dealtCards;
     }
 
-    public static String handToString(ArrayList<Card> handCards)
-    {
-        StringBuilder cardsStringBuilder = new StringBuilder();
-        handCards.forEach(card -> {
-            if (cardsStringBuilder.length() == 0) {
-                cardsStringBuilder.append(card.toString());
-            } else {
-                cardsStringBuilder.append(" ").append(card.toString());
-            }
-        });
-
-        return cardsStringBuilder.toString();
-    }
 }

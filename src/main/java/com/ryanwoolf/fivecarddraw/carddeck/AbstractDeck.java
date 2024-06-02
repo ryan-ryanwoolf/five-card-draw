@@ -1,4 +1,4 @@
-package com.ryanwoolf.fivecarddraw.cardgame;
+package com.ryanwoolf.fivecarddraw.carddeck;
 
 import com.ryanwoolf.fivecarddraw.enums.Ranks;
 import com.ryanwoolf.fivecarddraw.enums.Suits;
@@ -7,7 +7,7 @@ import java.util.*;
 
 public abstract class AbstractDeck {
 
-    public ArrayList<Card> deckCards = new ArrayList<>();
+    private final ArrayList<Card> deckCards = new ArrayList<>();
 
     public AbstractDeck(){
         populateDeck();
@@ -20,6 +20,10 @@ public abstract class AbstractDeck {
                 deckCards.add(new Card(rank, suit));
             }
         }
+    }
+
+    public ArrayList<Card> getDeckCards() {
+        return deckCards;
     }
 
     public abstract void shuffle();

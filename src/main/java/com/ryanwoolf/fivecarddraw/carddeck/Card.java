@@ -1,10 +1,7 @@
-package com.ryanwoolf.fivecarddraw.cardgame;
+package com.ryanwoolf.fivecarddraw.carddeck;
 
 import com.ryanwoolf.fivecarddraw.enums.Ranks;
 import com.ryanwoolf.fivecarddraw.enums.Suits;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class Card {
     private final Suits suit;

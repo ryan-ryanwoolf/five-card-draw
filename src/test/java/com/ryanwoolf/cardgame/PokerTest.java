@@ -1,7 +1,7 @@
 package com.ryanwoolf.cardgame;
 
-import com.ryanwoolf.fivecarddraw.cardgame.Card;
-import com.ryanwoolf.fivecarddraw.cardgame.CollectionShuffleDeck;
+import com.ryanwoolf.fivecarddraw.carddeck.Card;
+import com.ryanwoolf.fivecarddraw.carddeck.CollectionShuffleDeck;
 import com.ryanwoolf.fivecarddraw.cardgame.Poker;
 import com.ryanwoolf.fivecarddraw.mocks.HandMocks;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,7 +19,7 @@ public class PokerTest {
     public void setUp() {
         this.deck = new CollectionShuffleDeck();
         this.deck.shuffle();
-        this.handMocks = new HandMocks(deck.deckCards);
+        this.handMocks = new HandMocks(deck.getDeckCards());
     }
 
     @Test
@@ -102,5 +102,6 @@ public class PokerTest {
         assert(poker.getEvaluationString().equals("High Cards"));
 
     }
+
 
 }
