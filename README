@@ -1,6 +1,6 @@
 Getting started
 
- - Make sure that you are using java 11 - I tested on this using sdkman - sdk use java 11.0.23-amzn
+ - Make sure that you are using java 11, if you are using sdkman - sdk use java 11.0.23-amzn otherwise install Java 11 manually.
  - to run the application, execute ./run.sh
  - to run all unit tests, execute ./test.sh
  - to rebuild the application, execute ./build.sh
